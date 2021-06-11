@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="joined-together"
-run/main_scene="res://Game/World-00.tscn"
+run/main_scene="res://Game/World-01.tscn"
 config/icon="res://icon.png"
 
 [physics]
