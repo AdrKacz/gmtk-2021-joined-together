@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,8 +8,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$UI.set_visible(true)
-	$Game.set_visible(false)
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,28 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Menu_start_game():
-	$UI.visible = false
-	$Game.visible = true
-	print("starting")
-	pass # Replace with function body.
-
-
-func _on_Options_show_menu():
-	$UI/Options.visible = false
-	$UI/Menu.visible = true
-	print("go to menu")
-	pass # Replace with function body.
-
-
-func _on_Menu_show_options():
-	$UI/Options.visible = true
-	$UI/Menu.visible = false
-	print("go to options")
-	pass # Replace with function body.
-
-
 func _on_Menu_pressed():
-	$UI.visible = true
-	$Game.visible = false
-	pass # Replace with function body.
+	get_tree().change_scene("res://GUI/Menu.tscn")

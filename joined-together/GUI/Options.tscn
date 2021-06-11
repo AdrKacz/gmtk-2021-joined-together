@@ -10,6 +10,9 @@ margin_top = 40.0
 margin_right = -100.0
 margin_bottom = -40.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 100.0
@@ -19,7 +22,7 @@ margin_bottom = -40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_right = 161.0
-margin_bottom = 200.0
+margin_bottom = 240.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
 margin_right = 42.0
@@ -34,7 +37,7 @@ text = "Back"
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 46.0
 margin_right = 161.0
-margin_bottom = 200.0
+margin_bottom = 240.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_constants/separation = 20
@@ -49,7 +52,7 @@ margin_right = 30.0
 margin_bottom = 24.0
 text = "Up"
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/up"]
+[node name="upText" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/up"]
 margin_left = 34.0
 margin_right = 92.0
 margin_bottom = 24.0
@@ -68,7 +71,7 @@ margin_right = 48.0
 margin_bottom = 24.0
 text = "Down"
 
-[node name="LineEdit2" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/down"]
+[node name="downText" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/down"]
 margin_left = 52.0
 margin_right = 110.0
 margin_bottom = 24.0
@@ -87,7 +90,7 @@ margin_right = 36.0
 margin_bottom = 24.0
 text = "Left"
 
-[node name="LineEdit3" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/left"]
+[node name="leftText" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/left"]
 margin_left = 40.0
 margin_right = 98.0
 margin_bottom = 24.0
@@ -106,7 +109,7 @@ margin_right = 44.0
 margin_bottom = 24.0
 text = "Right"
 
-[node name="LineEdit5" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/right"]
+[node name="rightText" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/right"]
 margin_left = 48.0
 margin_right = 106.0
 margin_bottom = 24.0
@@ -125,7 +128,7 @@ margin_right = 53.0
 margin_bottom = 24.0
 text = "Switch"
 
-[node name="LineEdit4" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/switch"]
+[node name="switchText" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/switch"]
 margin_left = 57.0
 margin_right = 115.0
 margin_bottom = 24.0
@@ -134,4 +137,16 @@ editable = false
 caret_blink = true
 caret_blink_speed = 0.5
 
+[node name="reset" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 220.0
+margin_right = 115.0
+margin_bottom = 240.0
+text = "reset"
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/up/up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/down/down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/left/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/right/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/switch/switch" to="." method="_on_switch_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/reset" to="." method="_on_reset_pressed"]
