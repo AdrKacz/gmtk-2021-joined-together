@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/img/Tiles/tile_0167.png" type="Texture" id=1]
 [ext_resource path="res://Environment/Door.gd" type="Script" id=2]
+[ext_resource path="res://Assets/img/Tiles/tile_0166.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Particules/fireParticules.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/img/Tiles/tile_0713.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.6433, 16.1783 )
@@ -24,9 +27,30 @@ position = Vector2( 0.356689, 0.178329 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.356664, 0.178335 )
+position = Vector2( 0.31278, 0.309997 )
 scale = Vector2( 1.47556, 1.50953 )
 frames = SubResource( 2 )
+
+[node name="tile_0166" type="Sprite" parent="."]
+position = Vector2( 1.79897, -25.6199 )
+scale = Vector2( 1.47231, 1.09195 )
+texture = ExtResource( 3 )
+
+[node name="tile_0713" type="Sprite" parent="."]
+position = Vector2( 24.7959, 7.0194 )
+texture = ExtResource( 5 )
+
+[node name="tile_0714" type="Sprite" parent="."]
+position = Vector2( -22.5648, 6.68877 )
+texture = ExtResource( 5 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24.5841, 0.0369263 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( -22.9627, -0.0471725 )
+scale = Vector2( 0.8, 0.8 )
 
 [connection signal="area_entered" from="." to="." method="_on_Door_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Door_entered"]

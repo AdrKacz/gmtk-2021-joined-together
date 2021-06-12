@@ -13,7 +13,7 @@ script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="SymmetryCenter"]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 8, 8 )
 
 [node name="GameUI" parent="SymmetryCenter/Camera2D" instance=ExtResource( 1 )]
 
