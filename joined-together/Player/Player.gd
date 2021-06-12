@@ -8,10 +8,6 @@ onready var symmetry_center = $SymmetryCenter
 var x_symmetry_position
 
 func _process(delta):
-	print("Puppet: ", puppet_player.position.y)
-	print("Master: ", master_player.position.y)
-	print("Symmetry: ", symmetry_center.position.y)
-	print("===")
 #	set symmetry
 	symmetry_center.position.x = master_player.position.x
 	

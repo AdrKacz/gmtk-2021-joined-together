@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="joined-together"
-run/main_scene="res://Game/World-01/WorldManager.tscn"
+run/main_scene="res://Game/World-02/WorldManager.tscn"
 config/icon="res://icon.png"
+
+[global]
+
+pixel=false
 
 [input]
 
@@ -29,6 +33,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

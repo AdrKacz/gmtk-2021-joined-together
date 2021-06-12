@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -306.548, -2.28656, 0, 0, 0, 0, 108.544, -1.69354, 0, 0, 0, 0, 290.591, 183.912, 0, 0, 0, 0, 551.506, 82.5108, 0, 0, 0, 0, 718.136, -69.8872, 0, 0, 0, 0, 1020.56, -65.7363 )
+}
+
+[node name="WorldPath" type="Path2D"]
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}

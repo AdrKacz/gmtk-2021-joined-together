@@ -1,25 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/img/Tiles/tile_0299.png" type="Texture" id=1]
-[ext_resource path="res://Assets/img/Tiles/tile_0298.png" type="Texture" id=2]
+[ext_resource path="res://Assets/img/Tiles/tile_0070.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.8173, 31.6629 )
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+extents = Vector2( 27.9507, 15.6126 )
 
 [node name="Spike" type="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1.78337, -0.0891805 )
+[node name="AnimatedSprite" type="Sprite" parent="."]
+position = Vector2( -8.58307e-06, -17.7445 )
 scale = Vector2( 2.56257, 3.11456 )
-frames = SubResource( 2 )
+texture = ExtResource( 1 )
