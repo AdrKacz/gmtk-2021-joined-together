@@ -12,3 +12,6 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Puppet_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Puppet_body_exited"]

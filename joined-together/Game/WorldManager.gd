@@ -48,7 +48,6 @@ func find_idxs():
 func update_idxs(idx):
 #	Player should never pass through the last limit
 	find_idxs()
-	print(", Between ", previous_idx, " and ", next_idx + 1)
 	
 func calc_y_fct():
 	var previous_idx_position= curve.get_point_position(previous_idx)

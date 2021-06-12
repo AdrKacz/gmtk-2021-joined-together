@@ -4,13 +4,13 @@ export var speed = 500.0
 export var gravity = 2000.0
 export var jump_force = 1000.0
 
-export var gravity_factor = 1
+var gravity_factor
 
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func set_gravity_factor(new_gravity_factor):
+	gravity_factor = new_gravity_factor
 
 
 func _physics_process(delta):
@@ -33,4 +33,3 @@ func _physics_process(delta):
 		
 #	movement
 	move_and_slide(velocity, Vector2(0, -1 * gravity_factor))
-	
