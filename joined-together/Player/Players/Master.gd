@@ -62,7 +62,7 @@ func _physics_process(delta):
 	
 #	send signals
 	if initial_is_jumping != is_jumping:
-		emit_signal("jumped", is_jumping)
+		emit_signal("jumped", is_jumping, is_walking_to_the_left)
 	if initial_is_walking != is_walking:
 		emit_signal("walked", is_walking, is_walking_to_the_left)
 	if initial_is_walking_to_the_left != is_walking_to_the_left:
@@ -70,7 +70,7 @@ func _physics_process(delta):
 	
 func _process(delta):
 	if is_jumping:
-		animation.jump()
+		animation.jump(is_walking_to_the_left)
 	elif is_walking:
 		animation.walk(is_walking_to_the_left)
 	else:

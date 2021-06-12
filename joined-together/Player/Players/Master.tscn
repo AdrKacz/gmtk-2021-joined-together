@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Players/Master.gd" type="Script" id=1]
 [ext_resource path="res://Player/AnimatedPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/img/Tiles/tile_0520.png" type="Texture" id=3]
+[ext_resource path="res://Environment/fire.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.3908
 height = 23.1699
+
+[sub_resource type="CanvasItemMaterial" id=2]
 
 [node name="Master" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -17,3 +21,30 @@ shape = SubResource( 1 )
 [node name="AnimatedPlayer" parent="." instance=ExtResource( 2 )]
 player_one_prefix = "red"
 player_two_prefix = "blue"
+
+[node name="snow" parent="AnimatedPlayer" instance=ExtResource( 4 )]
+process_priority = 2
+material = SubResource( 2 )
+position = Vector2( 0.180654, 11.634 )
+emitting = false
+amount = 9
+lifetime = 0.9
+one_shot = true
+speed_scale = 1.0
+explosiveness = 1.0
+randomness = 0.4
+draw_order = 0
+texture = ExtResource( 3 )
+emission_shape = 0
+spread = 59.03
+gravity = Vector2( 0, 30 )
+initial_velocity = 19.24
+initial_velocity_random = 0.52
+angular_velocity = 395.86
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -4.62
+angle = 1.6
+angle_random = 1.0
+scale_amount = 0.07
+color = Color( 0.466667, 0.988235, 1, 1 )

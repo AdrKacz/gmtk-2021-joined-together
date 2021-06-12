@@ -91,8 +91,9 @@ func switch():
 func _on_SwitchTimer_timeout():
 	toggle_switch()
 	
-func update_jumping_puppet(is_jumping):
+func update_jumping_puppet(is_jumping, is_walking_to_the_left):
 	puppet_player.is_jumping = is_jumping
+	puppet_player.is_walking_to_the_left = is_walking_to_the_left
 	
 func update_walking_puppet(is_walking, is_walking_to_the_left):
 	puppet_player.is_walking = is_walking

@@ -28,7 +28,7 @@ func _process(delta):
 	
 #	animation
 	if is_jumping:
-		animation.jump()
+		animation.jump(is_walking_to_the_left)
 	elif is_walking:
 		animation.walk(is_walking_to_the_left)
 	else:
