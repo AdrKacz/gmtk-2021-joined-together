@@ -13,7 +13,7 @@ onready var switch_timer = $SwitchTimer
 var canSwitch = false
 
 func _ready():
-	create_players(Vector2(0, -256), Vector2(0, 256), 1, 1)
+	create_players(Vector2(0, -256), Vector2(0, 256), 1, 1, true)
 	toggle_switch()
 
 func _process(delta):
@@ -46,10 +46,12 @@ func impossible_switch():
 	print("Impossible Switch")
 	
 func remove_players():
+	master_player.disconnect("jumped", self, "update_jumping_puppet")
+	master_player.disconnect("walked", self, "update_walking_puppet")
 	master_player.queue_free()
 	puppet_player.queue_free()
 	
-func create_players(master_position, puppet_position, gravity_factor, scale_y):
+func create_players(master_position, puppet_position, gravity_factor, scale_y, master_to_player_one):
 	master_player = MasterPlayer.instance()
 	puppet_player = PupperPlayer.instance()
 	
@@ -57,10 +59,14 @@ func create_players(master_position, puppet_position, gravity_factor, scale_y):
 	master_player.position = master_position
 	master_player.name = "Master"
 	master_player.scale.y = scale_y
+	master_player.is_animation_to_player_one = master_to_player_one
+	master_player.connect("jumped", self, "update_jumping_puppet")
+	master_player.connect("walked", self, "update_walking_puppet")
 	
 	puppet_player.position = puppet_position
 	puppet_player.name = "Puppet"
-	puppet_player.scale.y = scale_y
+	puppet_player.scale.y = - scale_y
+	puppet_player.is_animation_to_player_one = not master_to_player_one
 	
 	add_child(master_player)
 	add_child(puppet_player)
@@ -73,7 +79,7 @@ func switch():
 	var puppet_position = puppet_player.position
 	var gravity_factor = - master_player.gravity_factor
 	remove_players()
-	create_players(puppet_position, master_position, gravity_factor, -master_player.scale.y)
+	create_players(puppet_position, master_position, gravity_factor, -master_player.scale.y, not master_player.is_animation_to_player_one)
 	
 #	Start timer
 	canSwitch = false
@@ -84,3 +90,10 @@ func switch():
 
 func _on_SwitchTimer_timeout():
 	toggle_switch()
+	
+func update_jumping_puppet(is_jumping):
+	puppet_player.is_jumping = is_jumping
+	
+func update_walking_puppet(is_walking, is_walking_to_the_left):
+	puppet_player.is_walking = is_walking
+	puppet_player.is_walking_to_the_left = is_walking_to_the_left
