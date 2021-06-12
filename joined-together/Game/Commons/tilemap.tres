@@ -5,7 +5,7 @@
 [ext_resource path="res://ice_animation.tres" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 21, 0, 20.6518, 11.5686, 0, 11.181 )
+points = PoolVector2Array( 0, 0, 21, 0, 21, 21, 0, 21 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 21, 0, 21, 21, 0, 21 )

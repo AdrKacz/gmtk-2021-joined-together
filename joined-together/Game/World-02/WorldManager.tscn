@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/img/Tiles/tile_0016.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Environment/fire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/Diams/RedDiam.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 33
@@ -168,3 +169,17 @@ __meta__ = {
 
 [node name="WorldPath" type="Path2D" parent="."]
 curve = SubResource( 2 )
+
+[node name="Diams" type="Node2D" parent="."]
+
+[node name="YellowDiam" parent="Diams" instance=ExtResource( 3 )]
+position = Vector2( 56, -80 )
+
+[node name="YellowDiam2" parent="Diams" instance=ExtResource( 7 )]
+position = Vector2( 552, -136 )
+
+[node name="YellowDiam3" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 984, -208 )
+
+[node name="YellowDiam4" parent="Diams" instance=ExtResource( 7 )]
+position = Vector2( 2224, 40 )
