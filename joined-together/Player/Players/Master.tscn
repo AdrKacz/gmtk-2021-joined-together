@@ -10,8 +10,6 @@ radius = 22.3908
 height = 23.1699
 
 [sub_resource type="CanvasItemMaterial" id=2]
-[sub_resource type="CircleShape2D" id=2]
-radius = 40.0
 
 [node name="Master" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -56,6 +54,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DiamArea"]
-shape = SubResource( 2 )
 
 [connection signal="area_entered" from="DiamArea" to="." method="_on_DiamArea_area_entered"]
