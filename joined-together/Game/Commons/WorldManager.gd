@@ -1,6 +1,6 @@
 extends Node
 
-var PathLimit = preload("res://Game/PathLimit.tscn")
+var PathLimit = preload("res://Game/Commons/PathLimit.tscn")
 
 
 onready var player = $Player
