@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Environment/Diams/RedDiam.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/Enemies/Bee.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/EndWorld/EndMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -25,6 +28,10 @@ tile_data = PoolIntArray( -1572813, 24, 65537, -1572812, 24, 65537, -1572811, 24
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Door" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4328, 120 )
+next_world = ExtResource( 8 )
 
 [node name="WorldPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -56,3 +63,8 @@ position = Vector2( 352, -536 )
 
 [node name="RedDiam" parent="Diams" instance=ExtResource( 4 )]
 position = Vector2( 368, -216 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bee" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 282, -368 )

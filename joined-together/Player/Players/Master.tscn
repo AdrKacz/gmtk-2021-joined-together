@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Players/Master.gd" type="Script" id=1]
 [ext_resource path="res://Player/AnimatedPlayer.tscn" type="PackedScene" id=2]
@@ -7,27 +7,39 @@
 radius = 22.3908
 height = 23.1699
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 40.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 20.0
 
 [node name="Master" type="KinematicBody2D" groups=[
 "player",
 ]]
+collision_mask = 5
 script = ExtResource( 1 )
 
 [node name="OuterCollision" type="CollisionShape2D" parent="."]
 position = Vector2( -0.640228, 0.853653 )
 shape = SubResource( 1 )
 
-[node name="DiamArea" type="Area2D" parent="."]
+[node name="BonusArea" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DiamArea"]
-shape = SubResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusArea"]
+shape = SubResource( 2 )
 
 [node name="AnimatedPlayer" parent="." instance=ExtResource( 2 )]
 player_one_prefix = "red"
 player_two_prefix = "blue"
 
-[connection signal="area_entered" from="DiamArea" to="." method="_on_DiamArea_area_entered"]
+[node name="EnemyArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="BonusArea" to="." method="_on_BonusArea_area_entered"]
+[connection signal="area_entered" from="EnemyArea" to="." method="_on_EnemyArea_area_entered"]

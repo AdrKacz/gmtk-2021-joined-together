@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/EndWorld/EndMenu.gd" type="Script" id=1]
+
+[node name="EndMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 476.0
+margin_top = 272.0
+margin_right = 548.0
+margin_bottom = 328.0
+
+[node name="Score" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 72.0
+margin_bottom = 14.0
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/Score"]
+margin_right = 35.0
+margin_bottom = 14.0
+text = "Score"
+
+[node name="Score" type="Label" parent="CenterContainer/VBoxContainer/Score"]
+margin_left = 39.0
+margin_right = 63.0
+margin_bottom = 14.0
+text = "999"
+align = 2
+
+[node name="Time" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 72.0
+margin_bottom = 32.0
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer/Time"]
+margin_right = 32.0
+margin_bottom = 14.0
+text = "Time"
+
+[node name="Time" type="Label" parent="CenterContainer/VBoxContainer/Time"]
+margin_left = 36.0
+margin_right = 72.0
+margin_bottom = 14.0
+text = "00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 72.0
+margin_bottom = 56.0
+text = "Play"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]

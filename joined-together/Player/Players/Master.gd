@@ -80,8 +80,11 @@ func _process(delta):
 	
 
 
-func _on_DiamArea_area_entered(area):
-	if (area.is_in_group("diam")):
-		Session.add_value(area.value)
-		Session.add_category_count(area.category)
-		area.queue_free()
+func _on_BonusArea_area_entered(area):
+	Session.add_value(area.value)
+	Session.add_category_count(area.category)
+	area.queue_free()
+
+
+func _on_EnemyArea_area_entered(area):
+	Session.die()
