@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="Particles2D" type="CPUParticles2D"]
+lifetime = 600.0
+randomness = 0.26
