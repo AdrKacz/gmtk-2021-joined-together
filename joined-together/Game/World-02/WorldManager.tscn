@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=2]
@@ -9,6 +9,15 @@
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Game/World-03/WorldManager.tscn" type="PackedScene" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=11]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 11 )
+shader_param/color = Vector3( 0.18, 0.94, 0.95 )
+shader_param/OCTAVES = 4
+shader_param/STRENGHT = 0.25
+shader_param/SPEED = 0.2
 
 [sub_resource type="DynamicFont" id=1]
 size = 33
@@ -26,6 +35,12 @@ script = ExtResource( 1 )
 position = Vector2( 13393.8, -1203.35 )
 scale = Vector2( 2.5, 2.5 )
 next_world = ExtResource( 9 )
+
+[node name="Fog" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 2800, 32 )
+scale = Vector2( 120, 50 )
+texture = ExtResource( 10 )
 
 [node name="Background" type="TileMap" parent="."]
 position = Vector2( 2, 0 )

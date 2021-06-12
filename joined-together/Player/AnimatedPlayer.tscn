@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/AnimatedPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/Assets/Aliens.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Environment/Shaders/glowing.shader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/line_color = Vector3( 1, 1, 1 )
+shader_param/line_thickness = 0.5
+shader_param/speed = 4.0
 
 [node name="AnimatedPlayer" type="AnimatedSprite"]
+material = SubResource( 1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
-animation = "blue-idle"
+animation = "blue-jump"
+frame = 3
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
