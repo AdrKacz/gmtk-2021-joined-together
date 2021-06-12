@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="joined-together"
-run/main_scene="res://GUI/Menu.tscn"
+run/main_scene="res://Game/World-01/WorldManager.tscn"
 config/icon="res://icon.png"
 
 [input]
