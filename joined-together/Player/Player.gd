@@ -13,7 +13,7 @@ onready var switch_timer = $SwitchTimer
 var canSwitch = false
 
 func _ready():
-	create_players(Vector2(0, -256), Vector2(0, 256), 1)
+	create_players(Vector2(0, -256), Vector2(0, 256), 1, 1)
 	toggle_switch()
 
 func _process(delta):
@@ -49,16 +49,18 @@ func remove_players():
 	master_player.queue_free()
 	puppet_player.queue_free()
 	
-func create_players(master_position, puppet_position, gravity_factor):
+func create_players(master_position, puppet_position, gravity_factor, scale_y):
 	master_player = MasterPlayer.instance()
 	puppet_player = PupperPlayer.instance()
 	
 	master_player.set_gravity_factor(gravity_factor)
 	master_player.position = master_position
 	master_player.name = "Master"
+	master_player.scale.y = scale_y
 	
 	puppet_player.position = puppet_position
 	puppet_player.name = "Puppet"
+	puppet_player.scale.y = scale_y
 	
 	add_child(master_player)
 	add_child(puppet_player)
@@ -71,7 +73,7 @@ func switch():
 	var puppet_position = puppet_player.position
 	var gravity_factor = - master_player.gravity_factor
 	remove_players()
-	create_players(puppet_position, master_position, gravity_factor)
+	create_players(puppet_position, master_position, gravity_factor, -master_player.scale.y)
 	
 #	Start timer
 	canSwitch = false
