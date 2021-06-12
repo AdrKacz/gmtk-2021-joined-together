@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
 
-[node name="YellowDiam" type="Area2D" groups=[
+[node name="RedDiam" type="Area2D" groups=[
 "diam",
 ]]
 collision_layer = 2
