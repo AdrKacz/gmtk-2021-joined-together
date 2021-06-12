@@ -14,7 +14,6 @@ func jump(flip):
 	animation = current_prefix + "-jump"
 	flip_h = flip
 	if $snow:
-		print($snow.one_shot, $snow.emitting)
 		$snow.emitting = true
 		$snow.one_shot = true
 
