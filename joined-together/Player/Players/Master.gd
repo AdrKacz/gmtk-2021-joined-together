@@ -3,9 +3,9 @@ extends KinematicBody2D
 signal jumped(is_jumping)
 signal walked(is_walking, flip)
 
-export var speed = 500.0
-export var gravity = 2000.0
-export var jump_force = 1000.0
+export var speed = 600.0
+export var gravity = 1800.0
+export var jump_force = 900.0
 
 var gravity_factor
 
