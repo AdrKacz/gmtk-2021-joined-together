@@ -28,5 +28,5 @@ position = Vector2( 0.356664, 0.178335 )
 scale = Vector2( 1.47556, 1.50953 )
 frames = SubResource( 2 )
 
-[connection signal="area_entered" from="." to="." method="_on_Door_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_Door_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Door_entered"]

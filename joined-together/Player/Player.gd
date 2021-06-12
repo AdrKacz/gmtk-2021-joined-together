@@ -27,7 +27,7 @@ func _process(delta):
 	puppet_player.set_master_position(master_position)
 	
 #	switch master and puppet
-	if Input.is_action_pressed("ui_accept") and canSwitch:
+	if Input.is_action_just_released("ui_accept") and canSwitch:
 		if puppet_player.is_collided():
 			impossible_switch()
 		else:

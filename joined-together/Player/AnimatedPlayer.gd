@@ -13,9 +13,6 @@ func _ready():
 func jump(flip):
 	animation = current_prefix + "-jump"
 	flip_h = flip
-	if $snow:
-		$snow.emitting = true
-		$snow.one_shot = true
 
 func walk(flip):
 	animation = current_prefix + "-walk"

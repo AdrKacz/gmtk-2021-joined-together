@@ -5,4 +5,5 @@ export (PackedScene) var next_world
 
 
 func _on_Door_entered(area):
-	print("Change Level")
+	if area.is_in_group("player"):
+		get_tree().change_scene_to(next_world)

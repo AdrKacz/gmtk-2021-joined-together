@@ -10,7 +10,8 @@ extends CanvasLayer
 func _ready():
 	Session.connect("update_categories", self, "update_categories")
 	Session.connect("update_time", self, "update_time")
-
+	update_categories(Session.categories_count)
+	update_time(Session.time)
 
 func update_categories(categories_count):
 	$Diams/HBoxContainer/YellowDiam/Count.text = str(categories_count[0])
