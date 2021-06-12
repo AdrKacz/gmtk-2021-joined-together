@@ -14,6 +14,10 @@ config/name="joined-together"
 run/main_scene="res://Game/World-02/WorldManager.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Session="*res://Globals/Session.tscn"
+
 [global]
 
 pixel=false

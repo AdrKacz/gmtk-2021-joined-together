@@ -76,3 +76,10 @@ func _process(delta):
 	else:
 		animation.idle()
 	
+
+
+func _on_DiamArea_area_entered(area):
+	if (area.is_in_group("diam")):
+		Session.add_value(area.value)
+		Session.add_category_count(area.category)
+		area.queue_free()
