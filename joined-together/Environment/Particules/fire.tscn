@@ -5,7 +5,7 @@
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node2D"]
 
 [node name="fire2" parent="." instance=ExtResource( 1 )]
 process_priority = 2
