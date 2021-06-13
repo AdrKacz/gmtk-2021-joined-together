@@ -93,4 +93,5 @@ func _on_BonusArea_area_entered(area):
 
 
 func _on_EnemyArea_area_entered(area):
+	print("DIE")
 	Session.die()
