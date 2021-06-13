@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,11 +10,17 @@
 [ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=8]
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Game/World-05-labyrinth/WorldManager.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -196.631, -22.328, 0, 0, 0, 0, 3078.65, -22.3443 )
 }
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 11 )
 
 [node name="WorldManager" type="Node"]
 script = ExtResource( 1 )
@@ -171,6 +177,7 @@ position = Vector2( 1186.25, 197.442 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 5244.41, -53.8172 )
+next_world = ExtResource( 12 )
 
 [node name="World" type="TileMap" parent="."]
 position = Vector2( -3.55271e-15, -7 )
@@ -183,6 +190,7 @@ __meta__ = {
 }
 
 [node name="DangerousFog" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( -600.881, 0.440735 )
 speed = 150.0
 
@@ -200,5 +208,81 @@ material = ExtResource( 8 )
 position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
 texture = ExtResource( 7 )
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.031
+anchor_top = -0.747
+anchor_right = 0.031
+anchor_bottom = -0.747
+margin_left = 5523.81
+margin_top = 323.338
+margin_right = 5996.82
+margin_bottom = 417.338
+custom_fonts/font = SubResource( 2 )
+text = "NO! Don't go further!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+anchor_left = 0.031
+anchor_top = -0.747
+anchor_right = 0.031
+anchor_bottom = -0.747
+margin_left = 6200.1
+margin_top = 283.134
+margin_right = 6673.11
+margin_bottom = 377.134
+custom_fonts/font = SubResource( 2 )
+text = "What about the fire?! Go BACK!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+anchor_left = 0.031
+anchor_top = -0.747
+anchor_right = 0.031
+anchor_bottom = -0.747
+margin_left = 6932.39
+margin_top = 267.339
+margin_right = 7522.39
+margin_bottom = 361.339
+custom_fonts/font = SubResource( 2 )
+text = "Greedy little runner, you shall BURN in the flames of evil!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.031
+anchor_top = -0.747
+anchor_right = 0.031
+anchor_bottom = -0.747
+margin_left = 5086.26
+margin_top = 301.2
+margin_right = 5182.26
+margin_bottom = 339.2
+custom_fonts/font = SubResource( 2 )
+text = "Safety!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.031
+anchor_top = -0.747
+anchor_right = 0.031
+anchor_bottom = -0.747
+margin_left = -98.4574
+margin_top = 277.6
+margin_right = 374.553
+margin_bottom = 371.6
+custom_fonts/font = SubResource( 2 )
+text = "
+RUUUUN!!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
