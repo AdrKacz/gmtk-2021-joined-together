@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -114,3 +116,20 @@ curve = SubResource( 1 )
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 6097.71, -183.164 )
+
+[node name="Shaders" type="Node" parent="."]
+
+[node name="Top" type="Sprite" parent="Shaders"]
+visible = false
+material = ExtResource( 9 )
+position = Vector2( 1780, -388 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 8 )
+
+[node name="Bottom" type="Sprite" parent="Shaders"]
+material = ExtResource( 9 )
+position = Vector2( 1780, 344 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 8 )
+
+[connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

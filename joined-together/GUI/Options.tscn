@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://GUI/Options.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/grey_button03.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Assets/UI/lineDark19.png" type="Texture" id=13]
 [ext_resource path="res://icon.png" type="Texture" id=14]
 [ext_resource path="res://GUI/FontActions.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Environment/Shaders/stars.shader" type="Shader" id=16]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 16 )
 
 [node name="Options" type="Control"]
 pause_mode = 2
@@ -27,9 +31,10 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-margin_right = 64.0
-margin_bottom = 64.0
-rect_scale = Vector2( 20, 20 )
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 20, 10 )
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
