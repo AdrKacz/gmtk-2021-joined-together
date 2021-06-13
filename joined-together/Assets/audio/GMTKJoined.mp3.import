@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GMTKJoined.mp3-5c1fb0bf39af27c827d2c5eaa2ea41f7.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/GMTKJoined.mp3"
+dest_files=[ "res://.import/GMTKJoined.mp3-5c1fb0bf39af27c827d2c5eaa2ea41f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
