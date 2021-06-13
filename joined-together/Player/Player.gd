@@ -15,6 +15,7 @@ var canSwitch = false
 func _ready():
 	create_players(Vector2(0, -256), Vector2(0, 256), 1, 1, true)
 	toggle_switch()
+	Session.assign_camera($SymmetryCenter/Camera2D/GameUI)
 
 func _process(delta):
 #	set symmetry

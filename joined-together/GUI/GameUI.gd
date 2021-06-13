@@ -22,3 +22,7 @@ func update_time(time):
 	var minutes = floor(time / 60)
 	var seconds = time % 60
 	$Time/Label.text = "%02d:%02d" % [minutes, seconds]
+
+
+func _on_TextureButton_pressed():
+	Session.options()
