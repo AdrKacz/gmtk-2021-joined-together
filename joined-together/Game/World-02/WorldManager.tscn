@@ -231,7 +231,7 @@ position = Vector2( 2207.71, -317.938 )
 
 [node name="Shaders" type="Node" parent="."]
 
-[node name="Up" type="Sprite" parent="Shaders"]
+[node name="Top" type="Sprite" parent="Shaders"]
 visible = false
 material = ExtResource( 12 )
 position = Vector2( 1780, -388 )
@@ -239,8 +239,9 @@ scale = Vector2( 85.125, 11.375 )
 texture = ExtResource( 10 )
 
 [node name="Bottom" type="Sprite" parent="Shaders"]
-visible = false
 material = ExtResource( 12 )
 position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
 texture = ExtResource( 10 )
+
+[connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

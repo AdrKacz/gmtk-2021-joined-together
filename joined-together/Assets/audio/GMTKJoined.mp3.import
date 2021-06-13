@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/GMTKJoined.mp3-5c1fb0bf39af27c827d2c5eaa2ea41f7.mp3str"
+path="res://.import/GMTKJoined.mp3-8a264d753148125a84f83c9133a3f02b.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/GMTKJoined.mp3"
-dest_files=[ "res://.import/GMTKJoined.mp3-5c1fb0bf39af27c827d2c5eaa2ea41f7.mp3str" ]
+source_file="res://Assets/AUdio/GMTKJoined.mp3"
+dest_files=[ "res://.import/GMTKJoined.mp3-8a264d753148125a84f83c9133a3f02b.mp3str" ]
 
 [params]
 

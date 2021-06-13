@@ -3,6 +3,8 @@ extends Node
 export (PackedScene) var MasterPlayer = preload("res://Player/Players/Master.tscn")
 export (PackedScene) var PupperPlayer = preload("res://Player/Players/Puppet.tscn")
 
+signal has_switch(who)
+
 
 var master_player
 var puppet_player
@@ -88,6 +90,8 @@ func switch():
 	
 #	Visual Effect
 	rotate_camera()
+#	Emit signal
+	emit_signal("has_switch", master_player.is_animation_to_player_one)
 
 func _on_SwitchTimer_timeout():
 	toggle_switch()
