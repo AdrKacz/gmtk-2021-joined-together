@@ -1,57 +1,127 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=2]
+[gd_resource type="SpriteFrames" load_steps=19 format=2]
 
-[ext_resource path="res://Assets/img/Tiles/tile_0086.png" type="Texture" id=1]
-[ext_resource path="res://Assets/img/Tiles/tile_0080.png" type="Texture" id=2]
-[ext_resource path="res://Assets/img/Tiles/tile_0081.png" type="Texture" id=3]
-[ext_resource path="res://Assets/img/Tiles/tile_0082.png" type="Texture" id=4]
-[ext_resource path="res://Assets/img/Tiles/tile_0079.png" type="Texture" id=5]
-[ext_resource path="res://Assets/img/Tiles/tile_0083.png" type="Texture" id=6]
-[ext_resource path="res://Assets/img/Tiles/tile_0021.png" type="Texture" id=7]
-[ext_resource path="res://Assets/img/Tiles/tile_0027.png" type="Texture" id=8]
-[ext_resource path="res://Assets/img/Tiles/tile_0023.png" type="Texture" id=9]
-[ext_resource path="res://Assets/img/Tiles/tile_0020.png" type="Texture" id=10]
-[ext_resource path="res://Assets/img/Tiles/tile_0022.png" type="Texture" id=11]
-[ext_resource path="res://Assets/img/Tiles/tile_0019.png" type="Texture" id=12]
+[ext_resource path="res://Assets/img/perso/Witchcraft_spr_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/img/perso/Witchcraft_spr_4.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 72, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 480, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 120, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 24, 24 )
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "blue-idle",
+"name": "blue-walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "red-crouch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "blue-jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "red-walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "red-idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": false,
 "name": "red-jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ SubResource( 16 ) ],
 "loop": true,
 "name": "blue-crouch",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 7 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "blue-walk",
+"name": "red-crouch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": false,
+"name": "blue-jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "red-walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "red-idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "blue-idle",
 "speed": 5.0
 } ]

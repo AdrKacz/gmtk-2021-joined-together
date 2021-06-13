@@ -4,13 +4,14 @@
 [ext_resource path="res://Player/AnimatedPlayer.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 22.2841
+radius = 14.0
+height = 18.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 15.0
+radius = 18.0
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 40.0
+radius = 28.0
 
 [node name="Puppet" type="Area2D"]
 collision_layer = 2
@@ -19,6 +20,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedPlayer" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1, 0 )
+animation = "red-idle"
 player_one_prefix = "red"
 player_two_prefix = "blue"
 
