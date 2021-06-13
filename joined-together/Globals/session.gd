@@ -2,7 +2,7 @@ extends Node
 
 
 export (String, FILE, "*.tscn") var start_menu_path = "res://Game/StartWorld/StartMenu.tscn"
-export (String, FILE, "*.tscn")  var first_world_path = "res://Game/World-02/WorldManager.tscn"
+export (String, FILE, "*.tscn")  var first_world_path = "res://Game/World-01-tuto/WorldManager.tscn"
 export (PackedScene)  var OptionMenu = preload("res://GUI/Options.tscn")
 
 signal update_value(value)
