@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/EndWorld/EndMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/grey_button01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/grey_button03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/grey_button02.png" type="Texture" id=4]
+[ext_resource path="res://GUI/Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Environment/Shaders/stars.shader" type="Shader" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 7 )
 
 [node name="EndMenu" type="Control"]
 anchor_right = 1.0
@@ -10,6 +19,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 20, 20 )
+texture = ExtResource( 6 )
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,52 +33,110 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 476.0
-margin_top = 272.0
-margin_right = 548.0
-margin_bottom = 328.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 417.0
+margin_top = 214.0
+margin_right = 607.0
+margin_bottom = 385.0
+custom_constants/separation = 20
 
-[node name="Score" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 72.0
-margin_bottom = 14.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer2"]
+margin_right = 190.0
+margin_bottom = 102.0
 
-[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/Score"]
-margin_right = 35.0
-margin_bottom = 14.0
-text = "Score"
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 102.0
+margin_bottom = 102.0
+custom_constants/separation = 10
 
-[node name="Score" type="Label" parent="CenterContainer/VBoxContainer/Score"]
-margin_left = 39.0
-margin_right = 63.0
-margin_bottom = 14.0
+[node name="Yellow" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_right = 102.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "Yellow"
+
+[node name="Green" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 102.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 5 )
+text = "Green"
+
+[node name="Red" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 102.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 5 )
+text = "Red"
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 102.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 5 )
+text = "Time"
+
+[node name="Values" type="VBoxContainer" parent="CenterContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 106.0
+margin_right = 179.0
+margin_bottom = 102.0
+custom_constants/separation = 10
+
+[node name="Yellow" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/Values"]
+margin_right = 73.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
 text = "999"
 align = 2
 
-[node name="Time" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 72.0
-margin_bottom = 32.0
+[node name="Green" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/Values"]
+margin_top = 28.0
+margin_right = 73.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 5 )
+text = "999"
+align = 2
 
-[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer/Time"]
-margin_right = 32.0
-margin_bottom = 14.0
-text = "Time"
+[node name="Red" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/Values"]
+margin_top = 56.0
+margin_right = 73.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 5 )
+text = "999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Time" type="Label" parent="CenterContainer/VBoxContainer/Time"]
-margin_left = 36.0
-margin_right = 72.0
-margin_bottom = 14.0
+[node name="Time" type="Label" parent="CenterContainer/VBoxContainer2/HBoxContainer/Values"]
+margin_top = 84.0
+margin_right = 73.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 5 )
 text = "00:00"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 72.0
-margin_bottom = 56.0
-text = "Play"
+[node name="Play" type="TextureButton" parent="CenterContainer/VBoxContainer2"]
+margin_top = 122.0
+margin_right = 190.0
+margin_bottom = 171.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer2/Play"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/Play" to="." method="_on_Play_pressed"]

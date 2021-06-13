@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/footstep_wood_004.ogg-0600081fab7b36d332fa14f72229ef05.oggstr"
+path="res://.import/footstep_wood_004.ogg-d846cddf576ad4d900c3fc4a55f18392.oggstr"
 
 [deps]
 
-source_file="res://Assets/audio/footstep_wood_004.ogg"
-dest_files=[ "res://.import/footstep_wood_004.ogg-0600081fab7b36d332fa14f72229ef05.oggstr" ]
+source_file="res://Assets/AUdio/footstep_wood_004.ogg"
+dest_files=[ "res://.import/footstep_wood_004.ogg-d846cddf576ad4d900c3fc4a55f18392.oggstr" ]
 
 [params]
 

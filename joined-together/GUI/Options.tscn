@@ -30,11 +30,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 material = SubResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 20, 10 )
+rect_scale = Vector2( 20, 20 )
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
