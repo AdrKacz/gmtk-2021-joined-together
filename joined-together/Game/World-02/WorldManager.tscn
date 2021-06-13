@@ -11,7 +11,7 @@
 [ext_resource path="res://Game/World-03-reverse-gameplay/WorldManager.tscn" type="PackedScene" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=11]
-[ext_resource path="res://Environment/Enemies/DangerousFog.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
@@ -229,5 +229,19 @@ position = Vector2( 2885.8, -316.571 )
 [node name="YellowDiam4" parent="Diams" instance=ExtResource( 7 )]
 position = Vector2( 2207.71, -317.938 )
 
-[node name="DangerousFog" parent="Diams" instance=ExtResource( 12 )]
-position = Vector2( -176, -24 )
+[node name="Shaders" type="Node" parent="."]
+
+[node name="Top" type="Sprite" parent="Shaders"]
+visible = false
+material = ExtResource( 12 )
+position = Vector2( 1780, -388 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 10 )
+
+[node name="Bottom" type="Sprite" parent="Shaders"]
+material = ExtResource( 12 )
+position = Vector2( 1780, 344 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 10 )
+
+[connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

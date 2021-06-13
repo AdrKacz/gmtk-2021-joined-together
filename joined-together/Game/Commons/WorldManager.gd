@@ -7,6 +7,9 @@ onready var player = $Player
 onready var WorldPath = $WorldPath
 onready var curve = $WorldPath.get_curve()
 
+onready var top_shader = $Shaders/Top
+onready var bottom_shader = $Shaders/Bottom
+
 var previous_idx
 var next_idx
 
@@ -61,3 +64,12 @@ func get_y_from_idxs(x):
 	
 func _physics_process(delta):
 	player.set_y(get_y_from_idxs(player.get_x()))
+
+
+func _on_Player_has_switch(who):
+	if who:
+		top_shader.hide()
+		bottom_shader.show()
+	else:
+		top_shader.show()
+		bottom_shader.hide()
