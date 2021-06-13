@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Players/Master.gd" type="Script" id=1]
 [ext_resource path="res://Player/AnimatedPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Footstep.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.0
@@ -39,6 +40,8 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
 shape = SubResource( 3 )
+
+[node name="Footstep" parent="." instance=ExtResource( 3 )]
 
 [connection signal="area_entered" from="BonusArea" to="." method="_on_BonusArea_area_entered"]
 [connection signal="area_entered" from="EnemyArea" to="." method="_on_EnemyArea_area_entered"]

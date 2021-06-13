@@ -73,10 +73,16 @@ func _physics_process(delta):
 func _process(delta):
 	if is_jumping:
 		animation.jump(is_walking_to_the_left)
+		$Footstep.toggle_audio(false)
 	elif is_walking:
 		animation.walk(is_walking_to_the_left)
 	else:
 		animation.idle()
+		$Footstep.toggle_audio(false)
+	
+	if is_on_floor() and is_walking:
+		$Footstep.toggle_audio(true)
+		
 	
 
 
