@@ -1,27 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Environment/Shaders/reflect.shader" type="Shader" id=1]
+[ext_resource path="res://Environment/Shaders/stars.shader" type="Shader" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="OpenSimplexNoise" id=2]
-period = 128.0
-
-[sub_resource type="NoiseTexture" id=3]
-seamless = true
-noise = SubResource( 2 )
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
-shader_param/water_color = Color( 1, 1, 1, 0 )
-shader_param/distortion_scale = Vector2( 0.85, 0.5 )
-shader_param/intensity = 0.8
-shader_param/speed = 0.1
-shader_param/is_active = true
-shader_param/noise = SubResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
+position = Vector2( 161.946, 9.51154 )
 rotation = 0.00471381
+scale = Vector2( 4.82202, 2.11152 )
 texture = ExtResource( 2 )
