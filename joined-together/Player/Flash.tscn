@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Environment/Shaders/flash.shader" type="Shader" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/baseTime = 0.5
+shader_param/is_active = false
+shader_param/power = 0.5
+
+[node name="Flash" type="Sprite"]
+material = SubResource( 1 )
+position = Vector2( 2800, 32 )
+scale = Vector2( 120, 50 )
+texture = ExtResource( 2 )
