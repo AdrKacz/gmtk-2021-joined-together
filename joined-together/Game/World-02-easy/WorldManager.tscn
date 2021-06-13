@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,11 +8,19 @@
 [ext_resource path="res://Game/World-03-reverse-gameplay/WorldManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=8]
+[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -159.809, -14.2823, 0, 0, 0, 0, 1572.28, -15.0885 )
 }
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 9 )
+shader_param/color = Vector3( 0.18, 0.94, 0.95 )
+shader_param/OCTAVES = 4
+shader_param/STRENGHT = 0.25
+shader_param/SPEED = 0.2
 
 [node name="WorldManager" type="Node"]
 script = ExtResource( 1 )
@@ -56,4 +64,10 @@ texture = ExtResource( 7 )
 material = ExtResource( 8 )
 position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 7 )
+
+[node name="Fog" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 2800, 32 )
+scale = Vector2( 120, 50 )
 texture = ExtResource( 7 )

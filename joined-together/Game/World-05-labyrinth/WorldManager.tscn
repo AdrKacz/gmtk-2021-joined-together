@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Environment/Diams/RedDiam.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/EndWorld/EndMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=4]
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=6]
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=7]
@@ -15,6 +16,13 @@
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -169.247, -23.9357, 0, 0, 0, 0, 4479.92, -23.9357 )
 }
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/color = Vector3( 0.18, 0.94, 0.95 )
+shader_param/OCTAVES = 4
+shader_param/STRENGHT = 0.25
+shader_param/SPEED = 0.2
 
 [node name="WorldManager" type="Node"]
 script = ExtResource( 7 )
@@ -132,6 +140,12 @@ texture = ExtResource( 10 )
 material = ExtResource( 11 )
 position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 10 )
+
+[node name="Fog" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 2800, 32 )
+scale = Vector2( 120, 50 )
 texture = ExtResource( 10 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
