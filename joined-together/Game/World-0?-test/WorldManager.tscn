@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=5]
@@ -17,10 +16,6 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -256, -24, 0, 0, 0, 0, 5696, -24 )
 }
 
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 2 )
-
 [node name="WorldManager" type="Node"]
 script = ExtResource( 10 )
 
@@ -31,7 +26,7 @@ position = Vector2( 1, -8 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -524239, 13, 0, -393204, 33, 196608, -393203, 33, 196609, -393202, 33, 196609, -393201, 33, 196610, -393197, 33, 196608, -393196, 33, 196609, -393195, 33, 196609, -393194, 33, 196609, -393193, 33, 196610, -196600, 33, 0, -196599, 33, 2, -131065, 33, 0, -131064, 33, 131078, -131063, 33, 65538, -131027, 26, 0, -130972, 7, 0, -9, 33, 196608, -8, 33, 196609, -7, 33, 196609, -6, 33, 196609, -5, 33, 196609, -4, 33, 196609, -3, 33, 196609, -2, 33, 196609, -1, 33, 196609, -65536, 33, 196609, -65535, 33, 196609, -65534, 33, 196609, -65533, 33, 196609, -65532, 33, 196609, -65531, 33, 196609, -65530, 33, 196609, -65529, 33, 262150, -65528, 33, 65537, -65527, 33, 65538, -65501, 33, 196608, -65500, 33, 196609, -65499, 33, 196609, -65498, 33, 196609, -65497, 33, 196609, -65496, 33, 196610, 7, 33, 131072, 8, 33, 65542, 9, 33, 65538, 65544, 33, 131072, 65545, 33, 131074, 196636, 33, 196608, 196637, 33, 196609, 196638, 33, 196609, 196639, 33, 196610, 262163, 33, 196608, 262164, 33, 196609, 262165, 33, 196609, 262166, 33, 196609, 262167, 33, 196610, 524303, 33, 196611 )
+tile_data = PoolIntArray( -524239, 13, 0, -393204, 33, 196608, -393203, 33, 196609, -393202, 33, 196609, -393201, 33, 196610, -393197, 33, 196608, -393196, 33, 196609, -393195, 33, 196609, -393194, 33, 196609, -393193, 33, 196610, -393167, 33, 196608, -393166, 33, 196609, -393165, 33, 196609, -393164, 33, 196609, -393163, 33, 196610, -262102, 33, 196608, -262101, 33, 196609, -262100, 33, 196609, -262099, 33, 196610, -196600, 33, 0, -196599, 33, 2, -131065, 33, 0, -131064, 33, 131078, -131063, 33, 65538, -131027, 26, 0, -130972, 7, 0, -9, 33, 196608, -8, 33, 196609, -7, 33, 196609, -6, 33, 196609, -5, 33, 196609, -4, 33, 196609, -3, 33, 196609, -2, 33, 196609, -1, 33, 196609, -65536, 33, 196609, -65535, 33, 196609, -65534, 33, 196609, -65533, 33, 196609, -65532, 33, 196609, -65531, 33, 196609, -65530, 33, 196609, -65529, 33, 262150, -65528, 33, 65537, -65527, 33, 65538, -65501, 33, 196608, -65500, 33, 196609, -65499, 33, 196609, -65498, 33, 196609, -65497, 33, 196609, -65496, 33, 196610, -65472, 33, 196608, -65471, 33, 196609, -65470, 33, 196609, -65469, 33, 196609, -65468, 33, 196609, -65467, 33, 196609, -65466, 33, 196609, -65465, 33, 196609, -65464, 33, 196609, -65463, 33, 196609, -65462, 33, 196609, -65461, 33, 196609, -65460, 33, 196609, -65459, 33, 196609, -65458, 33, 196610, 7, 33, 131072, 8, 33, 65542, 9, 33, 65538, 65544, 33, 131072, 65545, 33, 131074, 196636, 33, 196608, 196637, 33, 196609, 196638, 33, 196609, 196639, 33, 196610, 262163, 33, 196608, 262164, 33, 196609, 262165, 33, 196609, 262166, 33, 196609, 262167, 33, 196610, 262199, 33, 196608, 262200, 33, 196609, 262201, 33, 196609, 262202, 33, 196609, 262203, 33, 196609, 262204, 33, 196610, 524303, 33, 196611 )
 
 [node name="WorldPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -59,147 +54,6 @@ position = Vector2( 2885.8, -316.571 )
 
 [node name="YellowDiam4" parent="Diams" instance=ExtResource( 5 )]
 position = Vector2( 2207.71, -317.938 )
-
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.0285176
-anchor_top = -0.753443
-anchor_right = 0.0285176
-anchor_bottom = -0.753443
-margin_left = -101.202
-margin_top = 228.066
-margin_right = 371.798
-margin_bottom = 291.066
-custom_fonts/font = SubResource( 2 )
-text = "Use arrows to move around"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 310.375
-margin_top = 304.827
-margin_right = 783.385
-margin_bottom = 398.827
-custom_fonts/font = SubResource( 2 )
-text = "Jump with up arrow"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label7" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 615.573
-margin_top = 110.712
-margin_right = 1314.57
-margin_bottom = 204.712
-custom_fonts/font = SubResource( 2 )
-text = "Try to grab as much crystals as you can!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label8" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 2204.74
-margin_top = 337.987
-margin_right = 2903.74
-margin_bottom = 377.987
-custom_fonts/font = SubResource( 2 )
-text = "You're also timed, so be quick!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 1204.96
-margin_top = 257.93
-margin_right = 1556.96
-margin_bottom = 351.93
-custom_fonts/font = SubResource( 2 )
-text = "Who is that shade?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 1717.83
-margin_top = 601.54
-margin_right = 2451.83
-margin_bottom = 695.54
-rect_scale = Vector2( 1, -1 )
-custom_fonts/font = SubResource( 2 )
-text = "Swap when you see fit to continue forward"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label9" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 2271.29
-margin_top = 724.106
-margin_right = 2670.29
-margin_bottom = 818.106
-rect_scale = Vector2( 1, -1 )
-custom_fonts/font = SubResource( 2 )
-text = "Green diamonds are worth even more! Lucky you if you find red ones.."
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label6" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 2904.45
-margin_top = 94.6637
-margin_right = 3504.45
-margin_bottom = 188.664
-custom_fonts/font = SubResource( 2 )
-text = "Reach the door to finish the level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="."]
-anchor_left = 0.031
-anchor_top = -0.747
-anchor_right = 0.031
-anchor_bottom = -0.747
-margin_left = 1303.38
-margin_top = 337.844
-margin_right = 1647.38
-margin_bottom = 431.844
-custom_fonts/font = SubResource( 2 )
-text = "Press space to take control of it"
-align = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Shaders" type="Node" parent="."]
 
