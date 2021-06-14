@@ -26,7 +26,6 @@ font_data = ExtResource( 11 )
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 13 )
 shader_param/color = Vector3( 0.18, 0.94, 0.95 )
-shader_param/OCTAVES = 4
 shader_param/STRENGHT = 0.25
 shader_param/SPEED = 0.2
 

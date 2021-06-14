@@ -1,13 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Environment/Shaders/stars.shader" type="Shader" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=3]
+[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+shader_param/color = Vector3( 1, 1, 1 )
+shader_param/STRENGHT = 0.25
+shader_param/SPEED = 0.02
+shader_param/noise = SubResource( 3 )
+
 [node name="Node2D" type="Node2D"]
+position = Vector2( -1.89978, -35.6192 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -17,9 +32,16 @@ scale = Vector2( 4.82202, 2.11152 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -52.2415, 22.3214 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 material = ExtResource( 3 )
-position = Vector2( 2.3879, 14.887 )
+position = Vector2( -68.8504, 148.815 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 169.057, 170.022 )
+scale = Vector2( 1.93451, 1 )
 texture = ExtResource( 2 )

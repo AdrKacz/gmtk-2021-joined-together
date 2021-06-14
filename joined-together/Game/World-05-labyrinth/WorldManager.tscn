@@ -20,7 +20,6 @@ _data = {
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
 shader_param/color = Vector3( 0.18, 0.94, 0.95 )
-shader_param/OCTAVES = 4
 shader_param/STRENGHT = 0.25
 shader_param/SPEED = 0.2
 

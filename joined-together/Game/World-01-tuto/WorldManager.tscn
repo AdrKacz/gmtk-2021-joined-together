@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
@@ -13,12 +13,17 @@
 [ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=11]
 [ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=12]
 
+[sub_resource type="OpenSimplexNoise" id=4]
+
+[sub_resource type="NoiseTexture" id=5]
+noise = SubResource( 4 )
+
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 12 )
 shader_param/color = Vector3( 0.18, 0.94, 0.95 )
-shader_param/OCTAVES = 4
 shader_param/STRENGHT = 0.25
 shader_param/SPEED = 0.2
+shader_param/noise = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
