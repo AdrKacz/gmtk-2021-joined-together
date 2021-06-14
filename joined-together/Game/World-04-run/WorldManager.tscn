@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Game/World-05-labyrinth/WorldManager.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,12 +21,6 @@ _data = {
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 11 )
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 13 )
-shader_param/color = Vector3( 0.18, 0.94, 0.95 )
-shader_param/STRENGHT = 0.25
-shader_param/SPEED = 0.2
 
 [node name="WorldManager" type="Node"]
 script = ExtResource( 1 )
@@ -197,7 +190,6 @@ __meta__ = {
 }
 
 [node name="DangerousFog" parent="." instance=ExtResource( 6 )]
-visible = false
 position = Vector2( -600.881, 0.440735 )
 speed = 150.0
 
@@ -206,14 +198,14 @@ speed = 150.0
 [node name="Top" type="Sprite" parent="Shaders"]
 visible = false
 material = ExtResource( 8 )
-position = Vector2( 1780, -388 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 3772.07, -388 )
+scale = Vector2( 147.377, 11.375 )
 texture = ExtResource( 7 )
 
 [node name="Bottom" type="Sprite" parent="Shaders"]
 material = ExtResource( 8 )
-position = Vector2( 1780, 344 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 3740.56, 344 )
+scale = Vector2( 146.393, 11.375 )
 texture = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="."]
@@ -291,11 +283,5 @@ RUUUUN!!!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Fog" type="Sprite" parent="."]
-material = SubResource( 3 )
-position = Vector2( 2800, 32 )
-scale = Vector2( 120, 50 )
-texture = ExtResource( 7 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

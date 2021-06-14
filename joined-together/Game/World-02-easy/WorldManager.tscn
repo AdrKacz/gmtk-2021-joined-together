@@ -8,18 +8,13 @@
 [ext_resource path="res://Game/World-03-reverse-gameplay/WorldManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=8]
-[ext_resource path="res://Environment/Shaders/fog.shader" type="Shader" id=9]
+[ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -159.809, -14.2823, 0, 0, 0, 0, 1572.28, -15.0885 )
 }
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 9 )
-shader_param/color = Vector3( 0.18, 0.94, 0.95 )
-shader_param/STRENGHT = 0.25
-shader_param/SPEED = 0.2
 
 [node name="WorldManager" type="Node"]
 script = ExtResource( 1 )
@@ -28,11 +23,6 @@ script = ExtResource( 1 )
 curve = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-
-[node name="Diams" type="Node2D" parent="."]
-
-[node name="RedDiam" parent="Diams" instance=ExtResource( 4 )]
-position = Vector2( 3704.89, 1457.77 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1804.09, -142.819 )
@@ -65,8 +55,36 @@ position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
 texture = ExtResource( 7 )
 
-[node name="Fog" type="Sprite" parent="."]
-material = SubResource( 2 )
-position = Vector2( 2800, 32 )
-scale = Vector2( 120, 50 )
-texture = ExtResource( 7 )
+[node name="Diams" type="Node2D" parent="."]
+
+[node name="GreenDiam" parent="Diams" instance=ExtResource( 11 )]
+position = Vector2( 757.418, -265.096 )
+
+[node name="RedDiam" parent="Diams" instance=ExtResource( 4 )]
+position = Vector2( 194.138, -259.501 )
+
+[node name="YellowDiam" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 317.258, -155.056 )
+
+[node name="YellowDiam2" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 1316.91, -229.369 )
+
+[node name="YellowDiam3" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 1412.66, -229.369 )
+
+[node name="YellowDiam4" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 1601.29, 129.333 )
+
+[node name="YellowDiam5" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 1901.4, 147.196 )
+
+[node name="YellowDiam6" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 946.057, 245.089 )
+
+[node name="YellowDiam7" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 483.032, -167.203 )
+
+[node name="YellowDiam8" parent="Diams" instance=ExtResource( 10 )]
+position = Vector2( 1052.52, -197.929 )
+
+[connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
