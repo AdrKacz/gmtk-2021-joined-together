@@ -26,11 +26,6 @@ shader_param/SPEED = 0.2
 [node name="WorldManager" type="Node"]
 script = ExtResource( 7 )
 
-[node name="Door" parent="." instance=ExtResource( 14 )]
-position = Vector2( 7608.94, 167.119 )
-rotation = 3.14159
-next_world = ExtResource( 1 )
-
 [node name="WorldPath" type="Path2D" parent="."]
 position = Vector2( -1, 0 )
 curve = SubResource( 1 )
@@ -103,20 +98,25 @@ tile_data = PoolIntArray( -65555, 33, 65539, -19, 33, 65539, -65529, 33, 65536, 
 [node name="Top" type="Sprite" parent="Shaders"]
 visible = false
 material = ExtResource( 12 )
-position = Vector2( 1780, -388 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 4217.95, -388 )
+scale = Vector2( 161.311, 11.375 )
 texture = ExtResource( 9 )
 
 [node name="Bottom" type="Sprite" parent="Shaders"]
 material = ExtResource( 12 )
-position = Vector2( 1780, 344 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 4200.61, 344 )
+scale = Vector2( 160.769, 11.375 )
 texture = ExtResource( 9 )
+
+[node name="Door" parent="." instance=ExtResource( 14 )]
+position = Vector2( 7608.94, 167.119 )
+rotation = 3.14159
+next_world = ExtResource( 1 )
 
 [node name="Fog" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 2800, 32 )
-scale = Vector2( 120, 50 )
+position = Vector2( 4165.2, 34.312 )
+scale = Vector2( 162.229, 50 )
 texture = ExtResource( 9 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

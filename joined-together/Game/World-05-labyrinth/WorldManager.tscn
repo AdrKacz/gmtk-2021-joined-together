@@ -132,20 +132,20 @@ next_world = ExtResource( 2 )
 [node name="Top" type="Sprite" parent="Shaders"]
 visible = false
 material = ExtResource( 11 )
-position = Vector2( 1780, -388 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 3675.46, -388 )
+scale = Vector2( 144.358, 11.375 )
 texture = ExtResource( 10 )
 
 [node name="Bottom" type="Sprite" parent="Shaders"]
 material = ExtResource( 11 )
-position = Vector2( 1780, 344 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 2846.8, 344 )
+scale = Vector2( 118.463, 11.375 )
 texture = ExtResource( 10 )
 
 [node name="Fog" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 2800, 32 )
-scale = Vector2( 120, 50 )
+position = Vector2( 3635.52, 32 )
+scale = Vector2( 146.11, 50 )
 texture = ExtResource( 10 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

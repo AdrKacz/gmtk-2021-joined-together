@@ -198,7 +198,6 @@ __meta__ = {
 }
 
 [node name="DangerousFog" parent="." instance=ExtResource( 6 )]
-visible = false
 position = Vector2( -600.881, 0.440735 )
 speed = 150.0
 
@@ -207,14 +206,14 @@ speed = 150.0
 [node name="Top" type="Sprite" parent="Shaders"]
 visible = false
 material = ExtResource( 8 )
-position = Vector2( 1780, -388 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 3772.07, -388 )
+scale = Vector2( 147.377, 11.375 )
 texture = ExtResource( 7 )
 
 [node name="Bottom" type="Sprite" parent="Shaders"]
 material = ExtResource( 8 )
-position = Vector2( 1780, 344 )
-scale = Vector2( 85.125, 11.375 )
+position = Vector2( 3740.56, 344 )
+scale = Vector2( 146.393, 11.375 )
 texture = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="."]
@@ -295,8 +294,8 @@ __meta__ = {
 
 [node name="Fog" type="Sprite" parent="."]
 material = SubResource( 3 )
-position = Vector2( 2800, 32 )
-scale = Vector2( 120, 50 )
+position = Vector2( 3689.48, 32 )
+scale = Vector2( 147.796, 50 )
 texture = ExtResource( 7 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
