@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://Game/EndWorld/EndMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/Diams/RedDiam.tscn" type="PackedScene" id=8]
+[ext_resource path="res://icon.png" type="Texture" id=9]
+[ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=10]
+[ext_resource path="res://Environment/Shaders/BlurMaskShader.tres" type="Material" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -256, -24, 0, 0, 0, 0, 5696, -24 )
+}
+
+[node name="WorldManager" type="Node"]
+script = ExtResource( 10 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="TileMapBottom" type="TileMap" parent="."]
+position = Vector2( 1, -8 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -589730, 33, 3, -524239, 13, 0, -524194, 33, 65539, -458658, 33, 65539, -393204, 33, 196608, -393203, 33, 196609, -393202, 33, 196609, -393201, 33, 196610, -393197, 33, 196608, -393196, 33, 196609, -393195, 33, 196609, -393194, 33, 196609, -393193, 33, 196610, -393167, 33, 196608, -393166, 33, 196609, -393165, 33, 196609, -393164, 33, 196609, -393163, 33, 196610, -393122, 33, 65539, -327586, 33, 65539, -262102, 33, 196608, -262101, 33, 196609, -262100, 33, 196609, -262099, 33, 196610, -262082, 33, 196608, -262081, 33, 196609, -262080, 33, 196610, -262075, 33, 196611, -262071, 33, 196611, -262067, 33, 196611, -262050, 33, 131076, -262049, 33, 1, -262048, 33, 2, -196600, 33, 0, -196599, 33, 2, -196514, 33, 65536, -196513, 33, 65537, -196512, 33, 65538, -131065, 33, 0, -131064, 33, 131078, -131063, 33, 65538, -131027, 26, 0, -130978, 33, 65536, -130977, 33, 65537, -130976, 33, 131077, -130975, 33, 1, -130974, 33, 1, -130973, 33, 2, -130972, 7, 0, -9, 33, 196608, -8, 33, 196609, -7, 33, 196609, -6, 33, 196609, -5, 33, 196609, -4, 33, 196609, -3, 33, 196609, -2, 33, 196609, -1, 33, 196609, -65536, 33, 196609, -65535, 33, 196609, -65534, 33, 196609, -65533, 33, 196609, -65532, 33, 196609, -65531, 33, 196609, -65530, 33, 196609, -65529, 33, 262150, -65528, 33, 65537, -65527, 33, 65538, -65501, 33, 196608, -65500, 33, 196609, -65499, 33, 196609, -65498, 33, 196609, -65497, 33, 196609, -65496, 33, 196610, -65442, 33, 65536, -65441, 33, 65537, -65440, 33, 65537, -65439, 33, 65537, -65438, 33, 65537, -65437, 33, 262149, -65436, 33, 196609, -65435, 33, 196609, -65434, 33, 196609, -65433, 33, 196609, -65432, 33, 196609, -65431, 33, 196609, -65430, 33, 196610, 7, 33, 131072, 8, 33, 65542, 9, 33, 65538, 94, 33, 65540, 95, 33, 131073, 96, 33, 131073, 97, 33, 131073, 98, 33, 131073, 99, 33, 131074, 65544, 33, 131072, 65545, 33, 131074, 65630, 33, 65539, 131134, 33, 196608, 131135, 33, 196609, 131136, 33, 196610, 131141, 33, 196611, 131149, 33, 196611, 131153, 33, 196608, 131154, 33, 196609, 131155, 33, 196610, 131160, 33, 196608, 131161, 33, 196609, 131162, 33, 196609, 131163, 33, 196609, 131164, 33, 196609, 131165, 33, 196609, 131166, 33, 196615, 196636, 33, 196608, 196637, 33, 196609, 196638, 33, 196609, 196639, 33, 196610, 262163, 33, 196608, 262164, 33, 196609, 262165, 33, 196609, 262166, 33, 196609, 262167, 33, 196610, 262193, 33, 196608, 262194, 33, 196609, 262195, 33, 196609, 262196, 33, 196609, 262197, 33, 196609, 262198, 33, 196609, 262199, 33, 196609, 262200, 33, 196609, 262201, 33, 196609, 262202, 33, 196609, 262203, 33, 196610, 524303, 33, 196611 )
+
+[node name="WorldPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2993.48, -23.2094 )
+rotation = -1.5708
+next_world = ExtResource( 2 )
+
+[node name="Diams" type="Node2D" parent="."]
+
+[node name="GreenDiam" parent="Diams" instance=ExtResource( 6 )]
+position = Vector2( 698.578, 81.9232 )
+
+[node name="YellowDiam" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 972.034, 163.187 )
+
+[node name="YellowDiam5" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 967.2, 58.0316 )
+
+[node name="YellowDiam8" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 1409.25, -67.9869 )
+
+[node name="YellowDiam9" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 1409.25, -161.516 )
+
+[node name="YellowDiam10" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 1682.95, 77.7219 )
+
+[node name="YellowDiam11" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 1681.96, 197.833 )
+
+[node name="YellowDiam12" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2037.37, -170.377 )
+
+[node name="YellowDiam13" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2036.39, -68.9715 )
+
+[node name="YellowDiam16" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2355.37, -170.377 )
+
+[node name="YellowDiam17" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2351.43, -70.9405 )
+
+[node name="YellowDiam20" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2641.87, 23.5733 )
+
+[node name="YellowDiam21" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 2641.87, 121.041 )
+
+[node name="YellowDiam23" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 3080.06, -284.645 )
+
+[node name="YellowDiam24" parent="Diams" instance=ExtResource( 8 )]
+position = Vector2( 3378.29, 27.5113 )
+
+[node name="YellowDiam2" parent="Diams" instance=ExtResource( 5 )]
+position = Vector2( 692.31, 196.91 )
+
+[node name="YellowDiam3" parent="Diams" instance=ExtResource( 6 )]
+position = Vector2( 491.741, -398.25 )
+
+[node name="Shaders" type="Node" parent="."]
+
+[node name="Top" type="Sprite" parent="Shaders"]
+visible = false
+material = ExtResource( 11 )
+position = Vector2( 1780, -388 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 9 )
+
+[node name="Bottom" type="Sprite" parent="Shaders"]
+visible = false
+material = ExtResource( 11 )
+position = Vector2( 1780, 344 )
+scale = Vector2( 85.125, 11.375 )
+texture = ExtResource( 9 )
+
+[connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
