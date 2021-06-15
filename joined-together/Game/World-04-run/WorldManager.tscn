@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Game/World-05-labyrinth/WorldManager.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Environment/Fog.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -283,5 +284,9 @@ RUUUUN!!!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fog" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4412.55, 67.1491 )
+scale = Vector2( 496.794, 100 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]

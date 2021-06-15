@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game/Commons/tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Game/EndWorld/EndMenu.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Environment/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Environment/Diams/YellowDiam.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environment/Diams/GreenDiam.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/Fog.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environment/Diams/RedDiam.tscn" type="PackedScene" id=8]
 [ext_resource path="res://icon.png" type="Texture" id=9]
 [ext_resource path="res://Game/Commons/WorldManager.gd" type="Script" id=10]
@@ -104,5 +105,9 @@ material = ExtResource( 11 )
 position = Vector2( 1780, 344 )
 scale = Vector2( 85.125, 11.375 )
 texture = ExtResource( 9 )
+
+[node name="Fog" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1879.03, 67.1489 )
+scale = Vector2( 266.474, 100 )
 
 [connection signal="has_switch" from="Player" to="." method="_on_Player_has_switch"]
