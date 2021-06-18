@@ -18,11 +18,6 @@ config/icon="res://icon.png"
 
 Session="*res://Globals/Session.tscn"
 
-[display]
-
-window/size/test_width=630
-window/size/test_height=500
-
 [global]
 
 pixel=false
